@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programs - PCNL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #ffffff;
+        color: #0d1b2a;
+        margin: 0;
+        padding: 0;
+      }
+  
+      /* Basic navbar styling */
+.navbar {
+    background-color: #003366; /* Dark blue background */
+    padding: 1rem 0; /* Add padding for better spacing */
+}
+
+.navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .navbar-brand img {
+    width: 50px; /* Adjust logo size */
+    height: auto;
+    border-radius: 50%; /* Optional: makes the logo circular */
+}
+
+.navbar .navbar-brand span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px;
+}
+
+/* Navbar links */
+.navbar-nav .nav-item .nav-link {
+    color: #f8f9fa !important; /* White text color */
+    font-size: 1rem;
+    text-transform: uppercase; /* Capitalize text */
+    margin: 0 10px; /* Spacing between the nav items */
+    padding: 8px 15px;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+    color: #003366 !important; /* Dark blue color on hover */
+    background-color: #f8f9fa; /* Light background on hover */
+}
+
+.navbar-nav .nav-item .nav-link.active {
+    color: #003366 !important; /* Active link color */
+    background-color: #f8f9fa; /* Active background color */
+    font-weight: bold; /* Bold text for active link */
+}
+
+/* Dropdown menu */
+.navbar .nav-item .dropdown-menu {
+    background-color: #003366; /* Dark blue background for dropdown */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.navbar .nav-item .dropdown-item {
+    color: #f8f9fa !important; /* White text color */
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-item .dropdown-item:hover {
+    background-color: #f8f9fa; /* Light background on hover */
+    color: #003366 !important; /* Dark blue color on hover */
+}
+
+/* Responsive Navbar for mobile devices */
+@media (max-width: 991px) {
+    .navbar .navbar-toggler {
+        border: none;
+    }
+
+    .navbar .navbar-toggler-icon {
+        background-color: #f8f9fa; /* White icon for mobile view */
+    }
+
+    .navbar-nav {
+        margin-top: 15px;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 15px;
+    }
+}
+
+      .hero {
+        background-color: #00264d;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #ffffff;
+      }
+  
+      .hero h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+  
+      .section-content {
+        padding: 40px 15px;
+      }
+  
+      .card-box {
+        width: 100%;
+        max-width: 350px;
+        background-color: #ffffff;
+        border-radius: 14px;
+        border: 3px solid #0d1b2a;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: 20px auto;
+      }
+  
+      .card-box:hover {
+        background-color: #143171;
+        transform: translateY(-5px);
+      }
+  
+      .card-box h2 {
+        color: #0d1b2a;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+      .card-box h2:hover{
+        color: white;
+      }
+      .card-box p {
+        font-size: 1.1rem;
+        color: #333;
+        line-height: 1.6;
+      }
+      .card-box p:hover{
+        color: white;
+      }
+      .pcnl {
+        text-align: center;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 2.2rem;
+        padding: 30px 0;
+      }
+  
+      .video-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+      }
+  
+      iframe {
+        width: 80%;
+        max-width: 800px;
+        height: 450px;
+        border: none;
+      }
+  
+      footer {
+        background: linear-gradient(90deg, #001f3f, #004080);
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+      }
+  
+      .social-icons a {
+        color: #ffffff;
+        margin: 0 10px;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+      }
+  
+      .social-icons a:hover {
+        color: #a5c4f2;
+      }
+    /* Global Styling */
+    /* Faculty Section Container */
+    .faculty-section {
+        padding: 80px 20px;
+        background-color: #ffffff;  /* Dark Blue Background */
+        color: rgb(16, 52, 160);
+        border-radius: 20px;
+        margin-top: 60px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Section Heading */
+    .faculty-section h2 {
+        font-size: 3.5rem;
+        color: rgb(16, 52, 160);
+        margin-bottom: 60px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 3px;
+        position: relative;
+    }
+
+    .faculty-section h2:after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: #ffffff;  /* White underline */
+    }
+
+    /* Department Title */
+    .department-title {
+        font-size: 2.5rem;
+        color: rgb(16, 52, 160);
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid rgb(16, 52, 160);
+        padding-bottom: 10px;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Faculty Cards Grid Layout */
+    .faculty-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 60px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Faculty Member Card */
+    .faculty-card {
+        background-color: #ffffff;
+        color: #003366;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 30px;
+        text-align: center;
+        border: 2px solid #003366;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .faculty-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Faculty Image */
+    .faculty-card img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 4px solid #003366;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Faculty Member Info */
+    .faculty-card h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+        color: #003366;
+    }
+
+    .faculty-card p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .faculty-card .title {
+        font-size: 1.2rem;
+        color: #003366;  /* Dark Blue */
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    /* Contact Button */
+    .faculty-card .contact-btn {
+        background-color: #003366;  /* Dark Blue Background */
+        color: white;
+        padding: 15px 35px;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 30px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+        letter-spacing: 1px;
+    }
+
+    .faculty-card .contact-btn:hover {
+        background-color: #005599;  /* Lighter Blue on hover */
+        color: white;
+        transform: scale(1.05);
+    }
+
+    /* Media Queries for Mobile */
+    @media (max-width: 768px) {
+        .faculty-cards {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+    }
+    footer {
+        background: linear-gradient(90deg, #001f3f, #004080);
+            padding: 20px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        footer a {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #ffd700;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            color: #ffffff;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #ffd700;
+        }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="programs.html">
+                <img src="images/logo.jpg.png" alt="PCNL Logo">
+                <span class=" text-white ms-2">Philippine College <br> 
+                    of Northwestern Luzon</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         Academic Programs
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <li><a class="dropdown-item" href="programs.html">Programs</a></li>
+                          <li><a class="dropdown-item" href="faculty.html">Faculty & Staff</a></li>
+                          <li><a class="dropdown-item" href="announcement.html">Announcements</a></li>
+                        </ul>
+                      </li>
+                    <li class="nav-item"><a class="nav-link" href="contactpage.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </nav>
+    <div class="hero text-center">
+      <h1>Faculty & Staff</h1>
+  </div>
+<!-- Faculty & Staff Section HTML -->
+<div class="faculty-section">
+    <h2>Meet Our Faculty & Staff</h2>
+
+    <!-- BSIT Department -->
+    <div class="department-title">BSIT (Bachelor of Science in Information Technology)</div>
+    <div class="faculty-cards">
+        <!-- BSIT Faculty Member 1 -->
+        <div class="faculty-card">
+            <img src="Faculty/lex.png">
+            <h3>Lexter P. Garcia</h3>
+           
+           
+        </div>
+        <!-- BSIT Faculty Member 2 -->
+        <div class="faculty-card">
+            <img src="Faculty/byron.png">
+            <h3>Byron V. Rivera</h3>
+            <p class="title">Dean of BSIT</p>
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/aprilyn.png">
+            <h3>Aprilyn R. Serdeniola</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <h3>Nagie C. Apilado</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/susan.jpg">
+            <h3>Susan J. Boado</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <h3>Jeffrey Cabutotan</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/may ann.jpg">
+            <h3>Mary Ann Cacayuran</h3>
+           
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/aldrin.jpg">
+            <h3>Mark Aldrin Delos Reyes</h3>
+
+        </div>
+
+    </div>
+    </div>
+
+    <!-- BEE Department -->
+    <div class="department-title">BEE (Bachelor of Science in Electrical Engineering)</div>
+    <div class="faculty-cards">
+        <!-- BEE Faculty Member 1 -->
+        <div class="faculty-card">
+            <h3>Jed Troy V. Reyes</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <h3>Mike T. Fernandez</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/ray.jpg">
+            <h3>Ray Karlo J. Carrera</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <h3>Jerome H. Wania</h3>
+           
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/eloisa.jpg">
+            <h3>Eloisa S. Rilloraza</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <h3>Angelica L. Romero</h3>
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Florean S. Tovera</h3>
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Angelica B. Mapanao</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/edwin.png">
+            <h3>Edwin T. Fernandez</h3>
+            <p class="title">Dean of BEE</p>
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/john.png">
+            <h3>John C. Geneta</h3>
+            
+        </div>
+        <div class="faculty-card">
+            <h3>Michael George E. Jacla</h3>
+           
+        </div>
+    </div>
+
+    <!-- BSA Department -->
+    <div class="department-title">BSA (Bachelor of Science in Accountancy)</div>
+    <div class="faculty-cards">
+        <!-- BSA Faculty Member 1 -->
+        <div class="faculty-card">
+            <img src="Faculty/edmun.jpg">
+            <h3>Edmun Addun</h3>
+            <p class="title">Dean of BSA</p>
+        </div>
+        <div class="faculty-card">
+            <h3>Brian Adams V. Bugarin</h3>
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Beverly B. Ching</h3>
+           
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/leo.jpg">
+            <h3>Leo Paolo D.Lopez</h3>
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Mark John Orencia</h3>
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Ferdinand E. Ventura</h3>
+           
+        </div>
+    </div>
+
+    <!-- BSBA Department -->
+    <div class="department-title">BSBA (Bachelor of Science in Business Administration)</div>
+    <div class="faculty-cards">
+        <!-- BSBA Faculty Member 1 -->
+        <div class="faculty-card">
+            <h3>Aleine Felix</h3>
+           
+        </div>
+        <div class="faculty-card">
+            <h3>John Paul Mapanao</h3>
+            
+
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty//neme.png">
+            <h3>Nemesio P. Villamil</h3>
+            <p class="title">Dean of BSBA</p>
+           
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/conrado.jpg">
+            <h3>Conrado B. Dumo</h3>
+         
+            
+        </div>
+    </div>
+
+    <!-- BSCRIM Department -->
+    <div class="department-title">BSCRIM (Bachelor of Science in Criminology)</div>
+    <div class="faculty-cards">
+        <!-- BSCRIM Faculty Member 1 -->
+        <div class="faculty-card">
+            <h3>Marian Jomalyn B. Aquino</h3>
+            
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Erwin G. Ching</h3>
+            
+           
+        </div>
+        <div class="faculty-card">
+            <img src="Faculty/janet.png">
+            <h3>Janet A. Faroden</h3>
+            <p class="title">Dean of BSCRIM </p>
+            
+        </div>
+        <div class="faculty-card">
+            <h3>Gian Paulo B. Galera</h3>
+          
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Kristopher Jacaban</h3>
+          
+            
+        </div>
+        <div class="faculty-card">
+            <h3>Harmony E. Visitacion</h3>
+     
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Meysun Patna-an</h3>
+            
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Henry M. Agony</h3>
+         
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Michael R. Regacho</h3>
+           
+            
+        </div>
+        <div class="faculty-card">
+            <h3>Floramante Garcia</h3>
+            <p class="title">Lecturer in Criminal Justice</p>
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Reymar V. Suguitan</h3>
+           
+           
+        </div>
+        <div class="faculty-card">
+            <h3>Mhonet Cortez</h3>
+           
+          
+        </div>
+    </div>
+
+    <!-- Other Staff -->
+    <div class="department-title">Other Staff</div>
+    <div class="faculty-cards">
+        <!-- Other Staff Member 1 -->
+        <div class="faculty-card">
+            <h3>Jeah Me L.Boado</h3>
+        </div>
+        <!-- Other Staff Member 2 -->
+        <div class="faculty-card">
+            <h3>Erina Aihara</h3>
+        </div>
+        <div class="faculty-card">
+            <h3>Vincent Matthew J. Ching</h3>
+        </div>
+        <div class="faculty-card">
+            <h3>Andrea Milyn M. Boadilla</h3>
+        </div>
+        <div class="faculty-card">
+            <h3>Regilda C. Beloro</h3>
+        </div>
+        <div class="faculty-card">
+            <h3>Maria Fresha V. Clata</h3>
+        </div>
+        <div class="faculty-card">
+            <h3>Richard R. Clavero</h3>
+        </div>
+        <div class="faculty-card">
+            <h3>Alexis B. Dumo</h3>
+        </div>
+        <div class="faculty-card">
+            <h3>Michael Paul L. Lagliva</h3>
+        </div>
+        <div class="faculty-card">
+            <h3>Edison L. Lacsamana</h3>
+        </div>
+        <div class="faculty-card">
+    
+            <h3>Lea O. Talamayan</h3>
+        </div>
+        <div class="faculty-card">
+           
+            <h3>Richard C. Talamayan</h3>
+        </div>
+        <div class="faculty-card">
+           
+            <h3>Tricia Rose Domondon</h3>
+        </div>
+        <div class="faculty-card">
+          
+            <h3>Alfredo M. Gayo</h3>
+        </div>
+        <div class="faculty-card">
+        
+            <h3>Kathtyn Lei Diza</h3>
+        </div>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2025 PCNL. All Rights Reserved. Invest Now to Make Your Future Bright</p>
+    <a href="https://www.facebook.com/@PCNLOFFICIAL" target="_blank"><i class="fab fa-facebook"></i></a>
+    <a href="contactpage.html"><i class="fas fa-phone-alt"></i></a>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  </body>
+  
+  </html>

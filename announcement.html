@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Announcements - PCNL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f7f9;
+      color: #333;
+    }
+
+  /* Basic navbar styling */
+.navbar {
+  background-color: #003366; /* Dark blue background */
+  padding: 1rem 0; /* Add padding for better spacing */
+}
+
+.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-brand img {
+  width: 50px; /* Adjust logo size */
+  height: auto;
+  border-radius: 50%; /* Optional: makes the logo circular */
+}
+
+.navbar .navbar-brand span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 10px;
+}
+
+/* Navbar links */
+.navbar-nav .nav-item .nav-link {
+  color: #f8f9fa !important; /* White text color */
+  font-size: 1rem;
+  text-transform: uppercase; /* Capitalize text */
+  margin: 0 10px; /* Spacing between the nav items */
+  padding: 8px 15px;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #003366 !important; /* Dark blue color on hover */
+  background-color: #f8f9fa; /* Light background on hover */
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  color: #003366 !important; /* Active link color */
+  background-color: #f8f9fa; /* Active background color */
+  font-weight: bold; /* Bold text for active link */
+}
+
+/* Dropdown menu */
+.navbar .nav-item .dropdown-menu {
+  background-color: #003366; /* Dark blue background for dropdown */
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.navbar .nav-item .dropdown-item {
+  color: #f8f9fa !important; /* White text color */
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .nav-item .dropdown-item:hover {
+  background-color: #f8f9fa; /* Light background on hover */
+  color: #003366 !important; /* Dark blue color on hover */
+}
+
+/* Responsive Navbar for mobile devices */
+@media (max-width: 991px) {
+  .navbar .navbar-toggler {
+      border: none;
+  }
+
+  .navbar .navbar-toggler-icon {
+      background-color: #f8f9fa; /* White icon for mobile view */
+  }
+
+  .navbar-nav {
+      margin-top: 15px;
+  }
+
+  .navbar-nav .nav-item {
+      margin-bottom: 15px;
+  }
+}
+
+
+    .hero {
+      background-color: #00264d;
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+
+    .announcement-section {
+      padding: 60px 20px;
+    }
+
+    .announcement-card {
+      background: white;
+      border-left: 6px solid #003366;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .announcement-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .announcement-title {
+      font-size: 1.8rem;
+      color: #003366;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .announcement-date {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #001f3f, #004080);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    footer a {
+      color: white;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #ffd700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.jpg.png" alt="PCNL Logo">
+        <span class=" text-white ms-2">Philippine College <br> 
+          of Northwestern Luzon</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Academic Programs
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                <li><a class="dropdown-item" href="programs.html">Programs</a></li>
+              <li><a class="dropdown-item" href="faculty.html">Faculty & Staff</a></li>
+              <li><a class="dropdown-item" href="announcement.html">Announcements</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contactpage.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Latest Announcements</h1>
+    <p class="lead">Stay informed with the latest news and updates from PCNL</p>
+  </div>
+
+  <!-- Announcement Section -->
+  <div class="container announcement-section">
+    <!-- Announcement 1 -->
+    <div class="announcement-card">
+      <div class="announcement-title">Enrollment for 1st Semester AY 2025–2026 is Now Open!</div>
+      <div class="announcement-date"><i class="far fa-calendar-alt"></i> April 15, 2025</div>
+      <p>We are now accepting enrollees for the first semester. Visit the registrar's office or enroll online through the student portal.</p>
+    </div>
+    
+    <div class="announcement-card">
+      <div class="announcement-title">Enrollment for BS Civil Engineering is Now Open!</div>
+      <div class="announcement-date"><i class="far fa-calendar-alt"></i> May 7, 2025</div>
+      <p>We are thrilled to announce that PCNL is now accepting enrollees for the Bachelor of Science in Civil Engineering. Be part of our pioneering batch and build the future!</p>
+    </div>
+    <!-- Announcement 2 -->
+    <div class="announcement-card">
+      <div class="announcement-title">PCNL Sportfest in 2025</div>
+      <div class="announcement-date"><i class="far fa-calendar-alt"></i> May 8, 2025</div>
+      <p>All students are invited to participate in this year's sportfest events. Join your team and show your school spirit!</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PCNL. All Rights Reserved.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/@PCNLOFFICIAL" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="contactpage.html"><i class="fas fa-phone-alt"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

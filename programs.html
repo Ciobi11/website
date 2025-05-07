@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programs - PCNL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #ffffff;
+        color: #0d1b2a;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Navbar */
+     /* Basic navbar styling */
+.navbar {
+  background-color: #003366; /* Dark blue background */
+  padding: 1rem 0; /* Add padding for better spacing */
+}
+
+.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .navbar-brand img {
+  width: 50px; /* Adjust logo size */
+  height: auto;
+  border-radius: 50%; /* Optional: makes the logo circular */
+}
+
+.navbar .navbar-brand span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin-left: 10px;
+}
+
+/* Navbar links */
+.navbar-nav .nav-item .nav-link {
+  color: #f8f9fa !important; /* White text color */
+  font-size: 1rem;
+  text-transform: uppercase; /* Capitalize text */
+  margin: 0 10px; /* Spacing between the nav items */
+  padding: 8px 15px;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: #003366 !important; /* Dark blue color on hover */
+  background-color: #f8f9fa; /* Light background on hover */
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  color: #003366 !important; /* Active link color */
+  background-color: #f8f9fa; /* Active background color */
+  font-weight: bold; /* Bold text for active link */
+}
+
+/* Dropdown menu */
+.navbar .nav-item .dropdown-menu {
+  background-color: #003366; /* Dark blue background for dropdown */
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.navbar .nav-item .dropdown-item {
+  color: #f8f9fa !important; /* White text color */
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .nav-item .dropdown-item:hover {
+  background-color: #f8f9fa; /* Light background on hover */
+  color: #003366 !important; /* Dark blue color on hover */
+}
+
+/* Responsive Navbar for mobile devices */
+@media (max-width: 991px) {
+  .navbar .navbar-toggler {
+      border: none;
+  }
+
+  .navbar .navbar-toggler-icon {
+      background-color: #f8f9fa; /* White icon for mobile view */
+  }
+
+  .navbar-nav {
+      margin-top: 15px;
+  }
+
+  .navbar-nav .nav-item {
+      margin-bottom: 15px;
+  }
+}
+
+      /* Hero Section */
+      .video-background {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 400px; /* You can adjust this value to the desired height */
+        width: 100%;
+        overflow: hidden;
+        border-radius: 10px; /* Optional: rounded corners */
+    }
+    
+    .video-background video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%; /* Ensures the width is 100% of the container */
+        height: 100%; /* Ensures the height is 100% of the container */
+        transform: translate(-50%, -50%); /* Centers the video */
+        object-fit: cover; /* Ensures the video covers the area without distortion */
+        z-index: 1;
+    }
+    
+    .video-background .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(rgba(0, 50, 100, 0.6), rgba(0, 30, 60, 0.6));
+        z-index: 2;
+    }
+    
+    .video-background .content {
+        position: relative;
+        z-index: 3;
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .welcome-heading {
+        font-size: 4.5rem; /* You can adjust this size if needed */
+        font-weight: bold;
+        color: #fff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-align: center;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+        padding: 10px 20px;
+        border-radius: 6px;
+        margin: 0 auto;
+        max-width: 90%;
+    }
+    /* Section Styles */
+#courses {
+  background-color: white;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient background */
+#courses::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #001f3f 0%, #00aaff 100%);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Course Item Styles */
+.course-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 50px rgba(0, 31, 63, 0.2);
+}
+
+/* Course Image */
+/* Limit logo height and maintain aspect ratio */
+.course-img {
+  width: 100%;
+  max-height: 220px; /* You can adjust this value */
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.course-item:hover .course-img {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+/* Course Info Section */
+.course-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 31, 63, 0.6); 
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.course-item:hover .course-info {
+  opacity: 1;
+}
+
+/* Course Title */
+.course-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+/* Description Styling */
+.course-info p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+  color: #fff;
+  font-weight: 300;
+}
+
+/* Hover Effects for Title & Description */
+.course-item:hover .course-title {
+  color: #00aaff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* "Soon to offer" Text */
+.text-center {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #34495e;
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .course-title {
+    font-size: 1.5rem;
+  }
+
+  .course-info p {
+    font-size: 1rem;
+  }
+
+  .course-item {
+    margin-bottom: 30px;
+  }
+}
+
+      
+      /* Section Content */
+      .section-content,
+      .content-section {
+        padding: 50px 20px;
+        border-radius: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Card Boxes */
+      .card-box,
+      .program-card {
+        max-width: 350px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+        transition: 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      
+      .card-box {
+        background-color: #ffffff;
+        border: 3px solid #0d1b2a;
+      }
+      
+      .card-box:hover {
+        background-color: #143171;
+        transform: translateY(-5px);
+      }
+      
+      .card-box h2 {
+        color: #0d1b2a;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+      
+      .card-box h2:hover {
+        color: #ffffff;
+      }
+      
+      .card-box p {
+        font-size: 1.1rem;
+        color: #333;
+        line-height: 1.6;
+      }
+      
+      .card-box p:hover {
+        color: #ffffff;
+      }
+      
+      /* Program Cards */
+      .program-card {
+        background: linear-gradient(180deg, #004080, #002245);
+        color: #ffffff;
+        overflow: hidden;
+      }
+      
+      .program-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+      
+      .program-card h2 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+      }
+      
+      .program-card p {
+        color: #f0f8ff;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+      
+      .program-card img {
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      
+      .program-card img:hover {
+        transform: scale(1.05);
+      }
+      
+      /* Page Title */
+      .pcnl {
+        text-align: center;
+        font-size: 2.2rem;
+        padding: 30px 0;
+        font-family: 'Cambria', serif;
+      }
+      
+      /* Achievement Section */
+      .achievement h3 {
+        font-size: 2rem;
+        color: #003366;
+        font-weight: bold;
+        margin-top: 50px;
+        letter-spacing: 1px;
+      }
+      
+      .achievement p {
+        font-size: 1.2rem;
+        color: #000000;
+      }
+      
+      /* Video */
+      .video-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+      }
+      
+      iframe {
+        width: 80%;
+        max-width: 800px;
+        height: 450px;
+        border: none;
+      }
+      
+      /* Footer */
+      footer {
+        background: linear-gradient(90deg, #001f3f, #004080);
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+      }
+      
+      footer a,
+      .social-icons a {
+        color: #ffffff;
+        font-size: 1.3rem;
+        margin: 0 10px;
+        transition: color 0.3s ease;
+      }
+      
+      footer a:hover,
+      .social-icons a:hover {
+        color: #ffd700;
+      }
+      
+      /* Image Hover */
+      .image-item2 img {
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+      
+      .image-item2 img:hover {
+        transform: scale(1.05);
+      }
+      
+      /* Row alignment */
+      .row {
+        justify-content: center;
+      }
+    </style>      
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="programs.html">
+                <img src="images/logo.jpg.png" alt="PCNL Logo">
+                <span class=" text-white ms-2">Philippine College <br> 
+                  of Northwestern Luzon</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       Academic Programs
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="infoDropdown">
+                          <li><a class="dropdown-item" href="programs.html">Programs</a></li>
+                        <li><a class="dropdown-item" href="faculty.html">Faculty & Staff</a></li>
+                        <li><a class="dropdown-item" href="announcement.html">Announcements</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contactpage.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    </nav>
+    <div class="video-background">
+      <video autoplay muted loop playsinline>
+        <source src="videos/programs.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="overlay"></div>
+      <div class="content">
+        <!-- Your content goes here -->
+        <h1 class="welcome-heading">Explore Our Academic Programs</h1>
+      </div>
+    </div>
+    
+    <section id="courses">
+      <div class="container">
+        <div class="row g-4">
+          <!-- BSIT -->
+          <div class="col-md-6 col-lg-4">
+            <div class="course-item">
+              <img src="images/logBSIT.jpg" class="course-img" alt="BSIT Program">
+              <div class="course-info">
+                <h5 class="course-title">BSIT</h5>
+                <p><strong>Program:</strong> Bachelor of Science in Information Technology</p>
+                <p><strong>Dean:</strong> Byron Rivera</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- BSCRIM -->
+          <div class="col-md-6 col-lg-4">
+            <div class="course-item">
+              <img src="images/logoBSCRIM.png" class="course-img" alt="BS Criminology">
+              <div class="course-info">
+                <h5 class="course-title">BS Criminology</h5>
+                <p><strong>Program:</strong> Bachelor of Science in Criminology</p>
+                <p><strong>Dean:</strong> Janet Faroden</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- BSA -->
+          <div class="col-md-6 col-lg-4">
+            <div class="course-item">
+              <img src="images/logoBSA.jpg" class="course-img" alt="BSA Program">
+              <div class="course-info">
+                <h5 class="course-title">BS Accountancy</h5>
+                <p><strong>Program:</strong> Bachelor of Science in Accountancy</p>
+                <p><strong>Dean:</strong> Edmun Addun, CPA, MBA</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- BSBA -->
+          <div class="col-md-6 col-lg-4">
+            <div class="course-item">
+              <img src="images/logoBSBA.png" class="course-img" alt="BSBA Program">
+              <div class="course-info">
+                <h5 class="course-title">BSBA</h5>
+                <p><strong>Program:</strong> Bachelor of Science in Business Administration</p>
+                <p><strong>Dean:</strong> Nemesio Villamil</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- BEE & BSE -->
+          <div class="col-md-6 col-lg-4">
+            <div class="course-item">
+              <img src="images/logoBEE.png" class="course-img" alt="BEE Program">
+              <div class="course-info">
+                <h5 class="course-title">BEE & BSE</h5>
+                <p><strong>Program:</strong> Elementary & Secondary Education</p>
+                <p><strong>Dean:</strong> Edwin Fernandez</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <p class="text-center mt-5 text-muted fst-italic fw-bold">*Soon to offer: BS Civil Engineering*</p>
+      </div>
+    </section>
+    
+  
+  <div style="background-color: white;" class="container content-section">
+      <div class="row">
+          <!-- BSIT -->
+          <div class="col-md-4">
+              <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                  <h2 class="text-center" style="color: white;">Bachelor of Science in Information Technology</h2>
+                  <p class="text-center">Equips students with skills in software development, networking, and IT support, preparing them for careers in the tech industry.</p>
+                  <div id="carouselBSIT" class="carousel slide mt-6" data-bs-ride="carousel">
+                      <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                          <img src="Department/bsit1.png" class="d-block w-100" alt="BSIT Image 1">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSIT OFFICERS.png" class="d-block w-100" alt="BSIT Image 2">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSIT3.jpg" class="d-block w-100" alt="BSIT Image 3">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSIT4.jpg" class="d-block w-100" alt="BSIT Image 4">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSIT5.jpg" class="d-block w-100" alt="BSIT Image 5">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSIT6.jpg" class="d-block w-100" alt="BSIT Image 6">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSIT7.jpg" class="d-block w-100" alt="BSIT Image 7">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSIT8.jpg" class="d-block w-100" alt="BSIT Image 8">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSIT9.jpg" class="d-block w-100" alt="BSIT Image 9">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselBSIT" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselBSIT" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+              </div>
+          </div>
+
+          <!-- BSA -->
+          <div class="col-md-4">
+              <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                  <h2 class="text-center"  style="color: white;" style="color: white;">Bachelor of Science in Accountancy</h2>
+                  <p class="text-center">Prepares students for careers in accounting, financial management, auditing, and taxation with strong analytical skills.</p>
+                  <div id="carouselBSA" class="carousel slide mt-6" data-bs-ride="carousel">
+                      <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                          <img src="Department/bsa1.png" class="d-block w-100" alt="BSA Image 1">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSA OFFICERS.png" class="d-block w-100" alt="BSA Image 2">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSA3.jpg" class="d-block w-100" alt="BSA Image 3">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSA4.jpg" class="d-block w-100" alt="BSA Image 4">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSA5.jpg" class="d-block w-100" alt="BSA Image 5">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSA6.jpg" class="d-block w-100" alt="BSA Image 6">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSA7.jpg" class="d-block w-100" alt="BSA Image 7">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSA8.jpg" class="d-block w-100" alt="BSA Image 8">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSA9.jpg" class="d-block w-100" alt="BSA Image 9">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselBSA" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselBSA" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+              </div>
+          </div>
+
+          <!-- BEE -->
+          <div class="col-md-4">
+              <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                  <h2 class="text-center"  style="color: white;">Bachelor of Elementary & Secondary Education</h2>
+                  <p class="text-center">Trains future educators to teach and inspire students at both elementary and secondary education levels.</p>
+                  <div id="carouselBEE" class="carousel slide mt-5" data-bs-ride="carousel">
+                      <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                          <img src="Department/bee1.png" class="d-block w-100" alt="BEE Image 1">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BEE OFFICERS.png" class="d-block w-100" alt="BEE Image 2">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BEE3.jpg" class="d-block w-100" alt="BEE Image 3">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BEE4 (1).jpg" class="d-block w-100" alt="BEE Image 4">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BEE5.jpg" class="d-block w-100" alt="BEE Image 5">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BEE6.jpg" class="d-block w-100" alt="BEE Image 6">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BEE7.jpg" class="d-block w-100" alt="BEE Image 7">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BEE8.jpg" class="d-block w-100" alt="BEE Image 8">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BEE9.jpg" class="d-block w-100" alt="BEE Image 9">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselBEE" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselBEE" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <!-- BS Criminology -->
+          <div class="col-md-4">
+              <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                  <h2 class="text-center" style="color: white;">Bachelor of Science in Criminology</h2>
+                  <p class="text-center">Focuses on criminal law, law enforcement, and public safety. Prepares students for careers in law enforcement agencies.</p>
+                  <div id="carouselBSCRIM" class="carousel slide mt-5" data-bs-ride="carousel">
+                      <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                          <img src="Department/bscrim1.png" class="d-block w-100" alt="BSCRIM Image 1">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSCRIM OFFICERS.png" class="d-block w-100" alt="BSCRIM Image 2">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSCRIM3.jpg" class="d-block w-100" alt="BSCRIM Image 3">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSCRIM4.jpg" class="d-block w-100" alt="BSCRIM Image 4">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSCRIM5.jpg" class="d-block w-100" alt="BSCRIM Image 5">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSCRIM6.jpg" class="d-block w-100" alt="BSCRIM Image 6">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSCRIM7.jpg" class="d-block w-100" alt="BSCRIM Image 7">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSCRIM8.jpg" class="d-block w-100" alt="BSCRIM Image 8">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSCRIM9.jpg" class="d-block w-100" alt="BSCRIM Image 9">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselBSCRIM" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselBSCRIM" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+              </div>
+          </div>
+
+          <!-- BSBA -->
+          <div class="col-md-4">
+              <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+                  <h2 class="text-center"  style="color: white;">Bachelor of Science in Business Administration</h2>
+                  <p class="text-center">Develops leadership, marketing, and financial skills to succeed in business and entrepreneurial ventures.</p>
+                  <div id="carouselBSBA" class="carousel slide mt-5" data-bs-ride="carousel">
+                      <div class="carousel-inner rounded">
+                        <div class="carousel-item active">
+                          <img src="Department/bsba1 (1).png" class="d-block w-100" alt="BSBA Image 1">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSBA OFFICERS.png" class="d-block w-100" alt="BSBA Image 2">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSBA3.jpg" class="d-block w-100" alt="BSBA Image 3">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSBA4.jpg" class="d-block w-100" alt="BSBA Image 4">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSBA5.jpg" class="d-block w-100" alt="BSBA Image 5">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSBA6.jpg" class="d-block w-100" alt="BSBA Image 6">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSBA8.jpg" class="d-block w-100" alt="BSBA Image 7">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="Department/BSBA9.jpg" class="d-block w-100" alt="BSBA Image 8">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselBSBA" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselBSBA" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      </button>
+                    </div>
+              </div>
+          </div>
+          <!-- BS Civil Engineering - Coming Soon -->
+<div class="col-md-4">
+  <div class="program-card" data-aos="fade-up" data-aos-delay="100">
+    <h2 class="text-center"  style="color: white;">Bachelor of Science in Civil Engineering</h2>
+    <p class="text-center">Coming Soon! A future program that will focus on construction, structural design, and infrastructure development.</p>
+    <div class="text-center mt-3">
+      <img src="Department/CIVIL.jpg" class="img-fluid rounded" alt="BS Civil Engineering Coming Soon">
+    </div>
+  </div>
+</div>
+
+      </div>
+  </div>
+</div>
+<article class="achievement" id="achieve">
+<div class="container">
+    <h3 class="text-center mb-4">PCNL STUDENT ACHIEVEMENTS</h3>
+    <p style="font-style: italic;"class="text-center mb-5">"In every competition, we don't just represent PCNL, we represent our collective spirit and unwavering commitment to excellence."</p>
+    
+    <!-- Images in a responsive grid layout -->
+    <div class="row">
+        <div class="col-md-6 col-sm-6 mb-4">
+            <div class="image-item2">
+              <h4 style="color: #001f3f; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">ESSAY WRITING</h4>
+                <img src="achievers/ARC PCNL.jpg" alt="PCNL Achievement 1" class="img-fluid rounded shadow-sm">
+                <p style="color: black;">On the 8th day of November 2024, Princess Vie Romero, a BS Accountancy graduate and Arc Kheeneth Ulat, a third-year student, were awarded winners in the "Bagong Pilipinas" essay writing contest conducted by the Presidental Communications Office (PCO) at Malacanang Palace.</p>
+            </div><br>
+            <div class="col-md-12 col-sm-6 mb-4">
+              <div class="image-item2">
+                <h4 style="color: #001f3f; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"">LET BOARD PASSERS</h4>
+                  <img src="achievers/LET.jpg" alt="PCNL Achievement 3" class="img-fluid rounded shadow-sm">
+                  <p>The Philippine College of Northwestern Luzon (PCNL) proudly celebrates the remarkable achievement of its graduates who successfully passed the Licensure Examination for Teachers (LET). These future educators have proven that with dedication, perseverance, and passion, dreams truly do come true.
+
+                    The journey to becoming a licensed teacher is filled with challenges—countless lesson plans, long review hours, and endless moments of preparation. But through it all, these PCNLians stood strong, driven by their desire to educate, inspire, and make a difference.
+                    
+                    Passing the LET is more than just a personal success; it is a commitment to serve the next generation with knowledge, wisdom, and compassion. Our board passers now carry the responsibility of shaping young minds and contributing to the betterment of our society through quality education.</p>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 mb-4">
+            <div class="image-item2">
+              <h4 style="color: #001f3f; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"">CRIMINOLOGY BOARD PASSERS</h4>
+                <img src="achievers/CRIM.jpg" alt="PCNL Achievement 2" class="img-fluid rounded shadow-sm">
+              <p>The Philippine College of Northwestern Luzon (PCNL) is once again beaming with pride as we celebrate the success of our very own Criminology graduates who have successfully passed the Criminology Licensure Examination. This achievement marks a major milestone—not only in their personal journey, but also in the legacy of excellence upheld by PCNL.
+
+                With dedication, sacrifice, and the guidance of our committed faculty members, these newly licensed criminologists have proven that hard work truly pays off. Their names now stand as a testament to the quality education and strong values that PCNL instills in its students.</p><br>
+                <p>You are not just board passers—you are future protectors of justice, and you make the entire PCNL community proud.
+
+                  Mabuhay kayong lahat, bagong Criminologists ng PCNL!</p>
+              </div><br>
+              <div class="col-md-12 col-sm-6 mb-4">
+                <div class="image-item2">
+                  <h4 style="color: #001f3f; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">𝐅𝐥𝐨𝐫𝐞𝐬 𝐅𝐢𝐧𝐢𝐬𝐡𝐞𝐬 𝟔𝐭𝐡 𝐢𝐧 𝐏𝐑𝐈𝐒𝐀𝐀 𝟐𝟎𝟐𝟓 𝐖𝐚𝐥𝐤𝐚𝐭𝐡𝐨𝐧 𝐄𝐯𝐞𝐧𝐭</h4>
+                    <img src="achievers/flores.jpg" alt="PCNL Achievement 2" class="img-fluid rounded shadow-sm">
+                  <p>Tuguegarao City, Cagayan – April 11, 2025 – Student-athlete Flores, also known by her first name Loren, From Philippine College of Northwestern Luzon(PCNL), achieved an impressive 6th place finish at the 2025 Private Schools Athletic Association (PRISAA) National Games held in Tuguegarao, Cagayan.
+
+                    Competing in the 3-kilometer walkathon, Loren Flores showcased remarkable endurance, technique, and determination. Battling the intense heat and stiff competition, she stood out for her strong pacing and disciplined form, which earned her a spot among the top finishers in the event.
+                    
+                    Flores’ performance is the result of months of rigorous training and a deep commitment to her sport. Under the guidance of her coach and with the support of her school, Philippine College of Northwestern Luzon (PCNL), she was able to elevate her skills and represent her institution with pride on the national stage.
+                    
+                    The PRISAA Games is an annual multi-sport event that gathers top athletes from private schools across the country. It serves as a platform for showcasing young talent and fostering sportsmanship, discipline, and unity.
+                    
+                    Loren Flores’ 6th place finish is not just a personal victory—it’s also a proud moment for her school and community, inspiring fellow students and aspiring athletes to pursue excellence in both academics and sports.</p>
+                  </div>
+        </div>
+      </div>
+    </div>
+</div>
+</article>
+
+<footer>
+  <p>&copy; 2025 PCNL. All Rights Reserved.</p>
+  <a href="https://www.facebook.com/@PCNLOFFICIAL" target="_blank"><i class="fab fa-facebook"></i></a>
+  <a href="contactpage.html"><i class="fas fa-phone-alt"></i></a>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+
+</html>
